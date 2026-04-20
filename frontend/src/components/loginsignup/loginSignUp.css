@@ -1,0 +1,212 @@
+:root {
+  --primary: #3c009d;
+  --primary-light: #5a1ebf;
+  --text-dark: #333;
+  --text-light: #797979;
+  --bg-light: #eaeaea;
+  --white: #fff;
+  --border-radius: 20px;
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body ki jagah hum wrapper use karenge taaki chat aur login dono pe same background aaye */
+.app-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: transform var(--transition);
+}
+
+/* ... (Baaki poora CSS wahi rahega jo aapne pehle likha tha SingupLogin.css mein, isme koi aur change nahi hai) ... */
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.text {
+  color: var(--primary);
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  transition: box-shadow var(--transition);
+}
+
+.input:focus-within {
+  box-shadow: 0 0 0 3px rgba(60, 0, 157, 0.2);
+}
+
+.input img {
+  width: 24px;
+  height: 24px;
+  margin-right: 1rem;
+  opacity: 0.7;
+}
+
+.input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-dark);
+  padding: 0.5rem 0;
+}
+
+.input input::placeholder {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.forgetPassword {
+  text-align: right;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+.forgetPassword span {
+  color: var(--primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.forgetPassword span:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+.submitContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.submit {
+  flex: 1 1 auto;
+  min-width: 120px;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  text-align: center;
+}
+
+.submit.primary {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.submit.primary:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.submit:not(.primary):hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.submit:active {
+  transform: translateY(0);
+}
+
+.submit:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .input {
+    padding: 0.5rem 1rem;
+  }
+
+  .input img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+  }
+
+  .input input {
+    font-size: 0.95rem;
+  }
+
+  .submitContainer {
+    flex-direction: column;
+  }
+
+  .submit {
+    width: 100%;
+  }
+
+  .submit button {
+    background-color: rgb(85, 243, 85);
+  }
+
+  .forgetPassword {
+    text-align: center;
+  }
+}
