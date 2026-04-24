@@ -289,7 +289,7 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-
+chroma_db
 # Cython debug symbols
 cython_debug/
 
